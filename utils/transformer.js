@@ -229,7 +229,7 @@ function transformLeadData(sourceData) {
       country: 'de',
     },
     product: {
-      name: 'photovoltaik', // Standardized domain term. In production, this would map to a specific CRM Product ID.
+      name: 'Solaranlagen', // Standardized domain term. In production, this would map to a specific CRM Product ID.
     },
     lead_attributes: leadAttributes,
     meta_attributes: {
