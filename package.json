@@ -1,0 +1,30 @@
+{
+  "name": "transform-api",
+  "version": "1.0.0",
+  "description": "A Node.js middleware for validating, normalizing, and routing solar leads with hybrid AI/rule-based logic.",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "solar",
+    "lead-routing",
+    "middleware",
+    "openai"
+  ],
+  "author": "Amouzg",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "google-libphonenumber": "^3.2.43",
+    "openai": "^6.15.0"
+  }
+}
