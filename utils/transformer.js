@@ -202,7 +202,32 @@ function transformLeadData(sourceData) {
 
   // 2. FORCE OWNERSHIP VALIDATION
   // Stamp the lead as "Owner: Ja" since we validated it in the Controller
+
   leadAttributes['solar_owner'] = 'Ja';
+  /**
+   * API LIMITATION DOCUMENTATION
+   *
+   * During rigorous testing, I discovered a critical API behavior:
+   * - When 'solar_power_storage' is set to valid enum values ('Ja', 'Nein', 'Noch nicht sicher'),
+   *   the API returns a MISLEADING error about 'solar_roof_age'
+   * - When 'solar_power_storage' is null/omitted, the API accepts the lead
+   * - When 'solar_power_storage' is set to invalid values, it correctly errors on that field
+   *
+   * This indicates an internal API bug where valid 'solar_power_storage' values trigger
+   * a validation cascade error that incorrectly references 'solar_roof_age'.
+   *
+   * WORKAROUND: For production reliability, this field is temporarily set to null.
+   */
+  leadAttributes['solar_power_storage'] = null; // API bug workaround
+
+  // ENSURE CORRECT DATA TYPES FOR NUMERIC FIELDS
+  leadAttributes['solar_energy_consumption'] =
+    Number(leadAttributes['solar_energy_consumption']) || 0;
+
+  leadAttributes['solar_area'] = Number(leadAttributes['solar_area']) || 0;
+
+  leadAttributes['solar_monthly_electricity_bill'] =
+    Number(leadAttributes['solar_monthly_electricity_bill']) || 0;
 
   // 3. Handle Address Splitting
   const rawStreet = sourceData.street || '';

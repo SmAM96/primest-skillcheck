@@ -55,6 +55,8 @@ exports.processLead = async (req, res) => {
       },
     });
 
+    console.log('upstream response : ', response.data);
+
     res.json({
       status: 'processed',
       upstream_response: response.data,
