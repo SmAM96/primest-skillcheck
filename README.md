@@ -105,16 +105,32 @@ npm start
 curl -X POST http://localhost:3000/webhook \
   -H "Content-Type: application/json" \
   -d '{
-    "first_name": "Test",
-    "last_name": "Owner",
-    "email": "test@example.com",
-    "phone": "0170 1234567",
-    "zipcode": "66111",
-    "city": "Saarbrücken",
-    "questions": {
-      "Sind Sie der Eigentümer der Immobilie?": "Ja"
-    }
-  }'
+  "first_name": "test",
+  "last_name": "t",
+  "email": "test@t-online.de",
+  "phone": "01577 1918595",
+  "street": "Abensbergstraße 46 B",
+  "city": "Clenze",
+  "zipcode": "66259",
+  "created_at": 1750408701,
+  "lead_type": "phone",
+  "comment": "",
+  "questions": {
+    "Welche Dachform haben Sie auf Ihrem Haus?": "Satteldach",
+    "Wie hoch schätzen Sie ihren Stromverbrauch?": "2000",
+    "Sind Sie Eigentümer der Immobilie?": "yes ",
+    "Wann soll das Projekt gestartet werden?": "6",
+    "Wo möchten Sie die Solaranlage installieren?": "Zweifamilienhaus",
+    "Wie alt ist Ihr Dach?": "Vor 1990",
+    "Dachfläche": "100",
+    "Dachgefälle": "45",
+    "Möchten Sie grundsätzlich lieber kaufen oder mieten?": "Kaufen",
+    "Dachmaterial": "Dachziegel",
+    "Dachausrichtung": "Süd/West",
+    "Finanzierung": "Nicht sicher",
+    "Wallbox gewünscht": "Ja"
+  }
+}'
 ```
 
 ## 💡 Extra Value Added
